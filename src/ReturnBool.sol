@@ -9,7 +9,7 @@ contract ReturnBool {
 
             // solution
             mstore(0x00, 0x01)
-            return(0x00, 0x20)
+            return(0x00, 0x20)  
         }
     }
 }

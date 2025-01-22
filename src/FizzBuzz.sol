@@ -11,6 +11,19 @@ contract FizzBuzz {
             // else return an empty string "".
 
             // Assume `num` is greater than 0.
+
+            let result := 0x00
+            if iszero(mod(num, 0x03)) {result := 0x01}
+            if iszero(mod(num, 0x05)) {result := or(result, 0x02)}
+            
+            switch result
+            case 0x00 {mstore(0x00, 0x20) mstore(0x20, 0x00)}
+            case 0x01 {mstore(0x00, 0x20) mstore(0x20, 0x04) mstore(0x40, "fizz")}
+            case 0x02 {mstore(0x00, 0x20) mstore(0x20, 0x04) mstore(0x40, "buzz")}
+            case 0x03 {mstore(0x00, 0x20) mstore(0x20, 0x08) mstore(0x40, "fizzbuzz")}
+
+            return(0x00, 0x60)
+
         }
     }
 }

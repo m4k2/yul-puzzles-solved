@@ -13,6 +13,13 @@ contract EventWithMultipleData {
             // use `log1` to emit the event with one topic (the event signature hash) and the data payload
             // Hint: Pack the `emitter`, `num`, and `isActive` values in memory for the data payload
             // Note: Ensure the data layout in memory matches the event parameter order
+
+            mstore(0x00, "MyEvent(address,uint256,bool)")
+            mstore(0x80, emitter) // ADHD in action, could not overwritte usual fmp and zero slot =|, even if here there is not
+            mstore(0xa0, num)
+            mstore(0xc0, isActive)
+
+            log1(0x80, 0x60, keccak256(0x00, 0x1d))
         }
     }
 }

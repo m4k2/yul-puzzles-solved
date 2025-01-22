@@ -6,6 +6,10 @@ contract ReturnOppositeBool {
         assembly {
             // your code here
             // return the opposite of `_bool`
+            mstore(0x00, xor(_bool, 0x01))
+
+            return(0x00, 0x20)
         }
     }
 }
+

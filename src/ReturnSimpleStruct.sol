@@ -12,6 +12,11 @@ contract ReturnSimpleStruct {
         assembly {
             // your code here
             // return the struct: `Point{x,y}`
+
+            mstore(0x00, x)
+            mstore(0x20, y)
+
+            return(0x00, 0x40)
         }
     }
 }

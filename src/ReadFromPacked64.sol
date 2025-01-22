@@ -19,6 +19,9 @@ contract ReadFromPacked64 {
             // your code here
             // unpack and read data from the storage variable `readMe` of type uint64
             // then return it
+
+            mstore(0x00, and(shr(0x80, sload(readMe.slot)), 0xffffffffffffffff))
+            return(0x00, 0x20)
         }
     }
 }

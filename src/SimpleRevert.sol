@@ -8,6 +8,9 @@ contract SimpleRevert {
           // your code here
           // revert with no message
           // hint: https://www.rareskills.io/post/assembly-revert
+         
+          // mstore(0x00, 0x00) is not needed since we're reverting without a message
+          revert(0x00, 0x00)
       }
   }
 }

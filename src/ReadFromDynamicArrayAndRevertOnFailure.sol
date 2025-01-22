@@ -15,6 +15,21 @@ contract ReadFromDynamicArrayAndRevertOnFailure {
             // and return it
             // Revert with Solidity panic on failure, use error code 0x32 (out-of-bounds or negative index)
             // Hint: https://www.rareskills.io/post/solidity-dynamic
+
+            let l := sload(readMe.slot)
+
+            if gt(index, sub(l, 0x01)) {
+                mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)  // Function selector for Panic(uint256)
+                mstore(0x04, 0x32)
+                revert(0x00, 0x24)
+            }
+
+            mstore(0x00, readMe.slot)
+            let ptr := keccak256(0x00, 0x20)
+
+            mstore(0x00, sload(add(ptr, index)))
+            return(0x00, 0x20)
+
         }
     }
 }
