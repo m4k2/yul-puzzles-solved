@@ -9,6 +9,16 @@ contract PaymentSplitter {
             // send the entire contract balance to the recipients
             // each recipient gets balance / recipients.length
 
+            let l := recipients.length
+            let v := div(selfbalance(), l)
+
+            let s := recipients.offset
+
+            for {let i := 0} lt(i, l) {i := add(i, 1)}{
+                let a := calldataload(add(s, mul(i, 0x20)))
+                pop(call(gas(), a, v, 0x00, 0x00, 0x00, 0x00))
+            }
+
         }
     }
 }

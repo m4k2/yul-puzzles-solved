@@ -8,6 +8,8 @@ contract SimpleCall {
             // your code here
             // call "t.foo()"
             // hint: "foo()" has function selector 0xc2985578
+            mstore(0x00, 0xc298557800000000000000000000000000000000000000000000000000000000)
+            pop(call(gas(), t, 0x00, 0x00, 0x04, 0x00, 0x00))
        }
     }
 }

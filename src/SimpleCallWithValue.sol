@@ -9,6 +9,8 @@ contract SimpleCallWithValue {
             // call "t.foo()" while sending msg.value
             // hint: "foo()" has function selector 0xc2985578
             // hint: callvalue() returns the value of the current call
+            mstore(0x00, 0xc298557800000000000000000000000000000000000000000000000000000000)
+            pop(call(gas(), t, callvalue(), 0x00, 0x04, 0x00, 0x00))
        }
     }
 }

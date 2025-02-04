@@ -15,6 +15,9 @@ contract SimpleAllEtherTest is Test {
         vm.assume(to != address(this) && uint160(to) > uint160(100));
         vm.assume(amount > 0);
         vm.assume(to.balance == 0);
+        vm.assume(to != 0x4e59b44847b379578588920cA78FbF26c0B4956C); // Create2 addr
+        vm.assume(to != 0x7109709ECfa91a80626fF3989D68f67F5b1DD12D); // VM addr
+
         
         vm.deal(address(c), amount);
         c.main(payable(to));
