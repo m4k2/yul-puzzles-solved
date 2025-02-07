@@ -11,10 +11,8 @@ forge test --mp test/ReturnBool.t.sol
 
 Now repeat this with the other puzzles.
 
-
 ## Suggested order of the Puzzles
 Go through the puzzles sequentially 
-
 
 0.	[ReturnBool](https://github.com/RareSkills/yul-puzzles/blob/main/src/ReturnBool.sol) (_solved_)
 1.	[SimpleRevert](https://github.com/RareSkills/yul-puzzles/blob/main/src/SimpleRevert.sol)
@@ -87,3 +85,16 @@ Go through the puzzles sequentially
 68. [Approve](https://github.com/RareSkills/yul-puzzles/blob/main/src/Approve.sol)
 69. [TransferFrom](https://github.com/RareSkills/yul-puzzles/blob/main/src/TransferFrom.sol)
 70. [BalanceOf](https://github.com/RareSkills/yul-puzzles/blob/main/src/BalanceOf.sol)
+71. [CreateSimple](https://github.com/RareSkills/yul-puzzles/blob/main/src/CreateSimple.sol)
+72. [CreateSimplePayable](https://github.com/RareSkills/yul-puzzles/blob/main/src/CreateSimplePayable.sol)
+73. [CreateSimpleCalldata](https://github.com/RareSkills/yul-puzzles/blob/main/src/CreateSimpleCalldata.sol)
+74. [DeployOneByte](https://github.com/RareSkills/yul-puzzles/blob/main/src/DeployOneByte.sol)
+75. [DeployNBytes](https://github.com/RareSkills/yul-puzzles/blob/main/src/DeployNBytes.sol)
+76. [SquareRoot](https://github.com/RareSkills/yul-puzzles/blob/main/src/SquareRoot.sol)
+77. [Division](https://github.com/RareSkills/yul-puzzles/blob/main/src/Division.sol)
+78. [AbsoluteValue](https://github.com/RareSkills/yul-puzzles/blob/main/src/AbsoluteValue.sol)
+79. [SetBit](https://github.com/RareSkills/yul-puzzles/blob/main/src/SetBit.sol)
+80. [Log2](https://github.com/RareSkills/yul-puzzles/blob/main/src/Log2.sol)
+
+## Acknowledgement
+This work was funded by a [grant from the Ethereum Foundation](https://blog.ethereum.org/2025/02/06/allocation-q4-24#:~:text=Set%20of%2080%20puzzles%20for%20players%20to%20become%20comfortable%20with%20writing%20Yul%20assembly%20where%20players%20fill%20out%20a%20code%20block%20and%20see%20if%20the%20unit%20tests%20pass.).
