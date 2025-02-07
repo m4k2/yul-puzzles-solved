@@ -10,6 +10,8 @@ contract CreateSimple {
             // hint: use the `create` opcode
             // hint: the bytecode is already in memory
 
+            addr := create(0x00, add(deploymentBytecode, 0x20), deploymentBytecode) 
+
         }
     }
 }

@@ -10,6 +10,13 @@ contract DeployNBytes {
             // hint: use mstore8 to target a single byte
             // hint: because we only care about the size, you can simply return that region
             //       of memory and not care about what is inside it
+
+            mstore(0x00, 0x60016000f3)
+            mstore8(0x1c, size)
+            let addr := create(0x00, 0x1b, 0x05)
+
+            mstore(0x00, addr)
+            return(0x00, 0x20)
        }
     }
 }

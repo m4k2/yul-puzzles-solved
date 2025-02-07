@@ -10,6 +10,14 @@ contract AbsoluteValue{
           // hint: use signed comparisons
           // hint: https://www.rareskills.io/post/signed-int-solidity
 
+          if iszero(iszero(shr(0xff, x))) {
+            let r := add(not(x), 0x01)
+            mstore(0x00, r)
+            return(0x00, 0x20)
+          }
+
+          mstore(0x00, x)
+          return(0x00, 0x20)
       }
   }
 }

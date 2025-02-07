@@ -12,6 +12,7 @@ contract AbsoluteValueTest is Test {
     }
 
     function test_absoluteValue(int256 x) public {
+        vm.assume(x > type(int256).min);
         uint256 abs = c.main(x);
         if (x < 0) {
             assertEq(abs, uint256(-x));

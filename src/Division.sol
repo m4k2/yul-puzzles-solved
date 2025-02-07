@@ -9,6 +9,11 @@ contract Division {
             // x and y can be negative or positive
             // return x / y
             // if y == 0 revert
+
+            if iszero(y) {revert(0x00, 0x00)}
+            
+            mstore(0x00, sdiv(x, y))
+            return(0x00, 0x20)
        }
     }
 }
